@@ -65,7 +65,16 @@ fun AiReportScreen(navController: NavController, viewModel: AiReportViewModel = 
     ) { paddingValues ->
         if (uiState.isLoading) {
             Box(modifier = Modifier.fillMaxSize().padding(paddingValues), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator()
+                Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                    CircularProgressIndicator(color = Color(0xFF7E57C2))
+                    Spacer(modifier = Modifier.height(16.dp))
+                    Text(
+                        text = "Gemini is crunching your numbers... 🪙",
+                        fontSize = 16.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = Color.DarkGray
+                    )
+                }
             }
         } else {
             Column(
